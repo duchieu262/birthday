@@ -16,13 +16,14 @@
   <div id="text-container">
       <p id="birthday">HappyBirthday<br>Sweetheart</p>
       <p id="time">Yến Nhi 13-11-2025 </p>
+  <audio id="myAudio" controls hidden>
+    <source src="Crooked.mp3" type="audio/mpeg">
+  </audio>
       <!-- <p id="sweetheart">Sweetheart</p> -->
   </div>
     <div id="text-container-bottom">
     </div>
-      <audio autoplay loop hidden>
-    <source src="Crooked.mp3" type="audio/mpeg">
-  </audio>
+      
   </div>
   <div id="drag-container">
     <div id="spin-container">
@@ -124,6 +125,27 @@
   var loaded = false;
 
   function init(delayTime) {
+    const audio = document.getElementById("myAudio");
+
+    // Try autoplay immediately
+    audio.play().then(() => {
+      console.log("Autoplay succeeded!");
+    }).catch(() => {
+      console.log("Autoplay blocked. Waiting for user interaction...");
+
+      // Add listeners for any user interaction
+      const resumeAudio = () => {
+        audio.play();
+        console.log("Audio resumed after user interaction");
+        document.removeEventListener("click", resumeAudio);
+        document.removeEventListener("keydown", resumeAudio);
+        document.removeEventListener("scroll", resumeAudio);
+      };
+
+      document.addEventListener("click", resumeAudio);
+      document.addEventListener("keydown", resumeAudio);
+      document.addEventListener("scroll", resumeAudio);
+    });
     for (var i = 0; i < aEle.length; i++) {
       aEle[i].style.transform =
         "rotateY(" +
@@ -200,7 +222,7 @@
 
     var config = {
       traceK: 0.4,
-      timeDelta: 0.01
+      timeDelta: 0.03
     };
 
     var time = 0;
@@ -270,46 +292,12 @@
 
 
 
-
   // setup events
   document.onpointerdown = function (e) {
     clearInterval(odrag.timer);
     e = e || window.event;
     var sX = e.clientX,
       sY = e.clientY;
-
-
-    this.onpointermove = function (e) {
-      e = e || window.event;
-      var nX = e.clientX,
-        nY = e.clientY;
-      desX = nX - sX;
-      desY = nY - sY;
-      tX += desX * 0.1;
-      tY += desY * 0.1;
-      applyTranform(odrag);
-      sX = nX;
-      sY = nY;
-    };
-
-
-    this.onpointerup = function (e) {
-      odrag.timer = setInterval(function () {
-        desX *= 0.95;
-        desY *= 0.95;
-        tX += desX * 0.1;
-        tY += desY * 0.1;
-        applyTranform(odrag);
-        playSpin(false);
-        if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
-          clearInterval(odrag.timer);
-          playSpin(true);
-        }
-      }, 17);
-      this.onpointermove = this.onpointerup = null;
-    };
-
-
     return false;
   };
 
