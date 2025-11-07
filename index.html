@@ -15,10 +15,10 @@
   <canvas id="pinkboard"></canvas>
   <div id="text-container">
       <p id="birthday">HappyBirthday<br>Sweetheart</p>
+      <p id="time">Yến Nhi 13-11-2025 </p>
       <!-- <p id="sweetheart">Sweetheart</p> -->
   </div>
     <div id="text-container-bottom">
-      <p id="time">Yến Nhi<br>13-11-2025</p>
     </div>
       <audio autoplay loop hidden>
     <source src="Crooked.mp3" type="audio/mpeg">
@@ -518,13 +518,11 @@
     color: red;
   }
 
-#text-container {
-  width: 0%;
-}
 
-#birthday {
+
+#text-container  {
   position: absolute;
-  top: 14%;                /* Distance from top */
+  top: 5%;                /* Distance from top */
   left: 50%;                /* Center horizontally */
   transform: translateX(-50%);
   color: #c97a7a;               /* Text color */
@@ -549,7 +547,9 @@
   text-align: center;
 }
 
-
+#time {
+  font-size: 40px;          /* Bigger text */
+}
 
 
 </style>
