@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="pinkboard"></canvas>
+  <div id="text-container">
+      <p id="birthday">HappyBirthday<br>Sweetheart</p>
+      <!-- <p id="sweetheart">Sweetheart</p> -->
+  </div>
+    <div id="text-container-bottom">
+      <p id="time">Yến Nhi<br>13-11-2025</p>
+    </div>
+      <audio autoplay loop hidden>
+    <source src="Crooked.mp3" type="audio/mpeg">
+  </audio>
+  </div>
+  <div id="drag-container">
+    <div id="spin-container">
+      <img
+        src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/561161254_1537636777280412_8478781986761744808_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=qYCq7z6QIcoQ7kNvwGFPY0H&_nc_oc=AdkXq2wvZOY8OJoiAC93B78sXm-sAfAKYlsgtt3PwWWE4dN9ipgVT-BIN9IycvN1AMg&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=uvxUeS8IVt1Ui9ChMK_cFA&oh=00_AfgnckuF7y16krdh94QGt5aqn8RYe_cAiGKTvPGv1g8IgQ&oe=69116892"
+        alt="" />
+      <img
+        src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/571319386_1537636727280417_3307078075769512761_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ipJ_p3BN6BUQ7kNvwH6fe34&_nc_oc=AdnaoohyUjShO-Pohr2d9cxjSyegAr5VwMeGBj6cOI_CJMj6ye486bfYOyfoqapgY58&_nc_zt=23&_nc_ht=scontent.fsgn5-15.fna&_nc_gid=nJncFGHkk5ubg_nRK_Lz0Q&oh=00_Afhihi5Y0Hizjp0f5NtZgyraWsUqZhGNH5s6c28xli2CTA&oe=691179A0"
+        alt="" />
+      <img
+        src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/484180071_1367601617617263_2233853912312222364_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3N9agmFZuRAQ7kNvwE0C1CY&_nc_oc=Adm77KDTAiuwlHrBHuJ8jb3Fwd9PDTO-pHqax8g-IgtgaoNq5iN_tZxxyDW0LSZ61fo&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=qDL9jL7uPn19I4IW7PZxkw&oh=00_Afg3CkNecy5uAoqhyXunPpvh_EyTUjsw6v5a5T1d_lA5nw&oe=69117FBA"
+        alt="" />
+      <img
+        src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/544774545_1497792967931460_6926784947380537261_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=TCHq3RbIqFQQ7kNvwEaeMnp&_nc_oc=AdmvN8gucrD0J-6gmItKn6AkfvKy6AfAYg6xEvkMmmQIO_oQKbtBCk8fH7C24GXZzbw&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=1sQ2CcWBR9G-Gcr3O7xl1A&oh=00_AfjssVh0aM683TIXmyU34HP5P1fQgTsRbx_nSPAmF0iIXA&oe=691173A8"
+        alt="" />
+      <img
+        src="https://scontent.cdninstagram.com/v/t51.82787-15/529000552_18391672795184185_7348607987088939763_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=103&ig_cache_key=MzY5NDY4ODM3NTk2NDc3Mzk1MQ%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkxOS5zZHIuQzMifQ%3D%3D&_nc_ohc=g5UaNj3U05cQ7kNvwHRorPM&_nc_oc=Adnc-Hgg_ctZ3vmv-tzc2hlUDXgZqx2Y7Hvr1PE4BVkg9w6nsLaD7JhLEL5j6IU1fUQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=DFwZnfD4tGymzVPGXtZv_g&oh=00_AfiHfYZ4UgZVyrlKXnEnx50I9ca-R28fYhY_GDAqrLECyg&oe=69115F23"
+        alt="" />
+      <img
+        src="https://scontent.cdninstagram.com/v/t51.82787-15/540972302_18395002279184185_5904303724685851698_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=108&ig_cache_key=MzcxMTA2NzM4NTM1NDA4NzYwMA%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkxMS5zZHIuQzMifQ%3D%3D&_nc_ohc=LaqOHtLqW8sQ7kNvwGc8aj5&_nc_oc=Adns28gKABDrsxntMXQ1v-WDOhIcUP56Lw06ifzLriDEgQW-FpEIuNJeTuXiFO5_Lew&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=DFwZnfD4tGymzVPGXtZv_g&oh=00_AfhrwSB5giR4Y7bWJyCLbLNALJzj939-7Ud6BP6lrwgc9g&oe=6911656C"
+        alt="" />
+
+
+      <!-- Example add video  -->
+
+    </div>
+    <div id="ground"></div>
+  </div>
+
+
+
+</body>
+<script>
+  // You can change global variables here:
+  var radius = 200; // how big of the radius
+  var autoRotate = true; // auto rotate or not
+  var rotateSpeed = -30; // unit: seconds/360 degrees
+  var imgWidth = 120; // width of images (unit: px)
+  var imgHeight = 170; // height of images (unit: px)
+
+
+  // Link of background music - set 'null' if you dont want to play background music
+
+
+
+  var settings = {
+    particles: {
+      length: 500, // maximum amount of particles
+
+
+      duration: 2, // particle duration in sec
+
+
+      velocity: 100, // particle velocity in pixels/sec
+
+
+      effect: -0.75, // play with this for a nice effect
+
+
+      size: 30, // particle size in pixels
+    },
+  };
+
+  (function (canvas) {
+
+    var image = (function () {
+      var canvas = document.createElement("canvas")
+      canvas.width = settings.particles.size;
+      canvas.height = settings.particles.size;
+      var image = new Image();
+      image.src = canvas.toDataURL();
+      return image;
+    })();
+
+  })(document.getElementById("pinkboard"));
+
+
+  // ===================== start =======================
+  // animation start after 1000 miliseconds
+  setTimeout(init, 1000);
+
+
+  var odrag = document.getElementById("drag-container");
+  var ospin = document.getElementById("spin-container");
+  var aImg = ospin.getElementsByTagName("img");
+  var aVid = ospin.getElementsByTagName("video");
+  var aEle = [...aImg, ...aVid]; // combine 2 arrays
+
+
+  // Size of images
+  ospin.style.width = imgWidth + "px";
+  ospin.style.height = imgHeight + "px";
+
+
+  // Size of ground - depend on radius
+  var ground = document.getElementById("ground");
+  ground.style.width = radius * 3 + "px";
+  ground.style.height = radius * 3 + "px";
+  var loaded = false;
+
+  function init(delayTime) {
+    for (var i = 0; i < aEle.length; i++) {
+      aEle[i].style.transform =
+        "rotateY(" +
+        i * (360 / aEle.length) +
+        "deg) translateZ(" +
+        radius +
+        "px)";
+      aEle[i].style.transition = "transform 1s";
+      aEle[i].style.transitionDelay =
+        delayTime || (aEle.length - i) / 4 + "s";
+    }
+    if (loaded) return;
+    loaded = true;
+    var mobile = window.isDevice;
+    var koef = mobile ? 0.5 : 1;
+    var canvas = document.getElementById('pinkboard');
+    var ctx = canvas.getContext('2d');
+    var width = canvas.width = koef * innerWidth;
+    var height = canvas.height = koef * innerHeight;
+    var rand = Math.random;
+    ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.fillRect(0, 0, width, height);
+
+    var heartPosition = function (rad) {
+      //return [Math.sin(rad), Math.cos(rad)];
+      return [Math.pow(Math.sin(rad), 3), -(15 * Math.cos(rad) - 5 * Math.cos(2 * rad) - 2 * Math.cos(3 * rad) - Math.cos(4 * rad))];
+    };
+    var scaleAndTranslate = function (pos, sx, sy, dx, dy) {
+      return [dx + pos[0] * sx, dy + pos[1] * sy];
+    };
+
+    window.addEventListener('resize', function () {
+      width = canvas.width = koef * innerWidth;
+      height = canvas.height = koef * innerHeight;
+      // ctx.fillStyle = "rgba(0,0,0,1)";
+      // ctx.fillRect(0, 0, width, height);
+    });
+
+    var traceCount = mobile ? 20 : 50;
+    var pointsOrigin = [];
+    var i;
+    var dr = mobile ? 0.3 : 0.1;
+    for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 210, 13, 0, 0));
+    for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 150, 9, 0, 0));
+    for (i = 0; i < Math.PI * 2; i += dr) pointsOrigin.push(scaleAndTranslate(heartPosition(i), 90, 5, 0, 0));
+    var heartPointsCount = pointsOrigin.length;
+
+    var targetPoints = [];
+    var pulse = function (kx, ky) {
+      for (i = 0; i < pointsOrigin.length; i++) {
+        targetPoints[i] = [];
+        targetPoints[i][0] = kx * pointsOrigin[i][0] + width / 2;
+        targetPoints[i][1] = ky * pointsOrigin[i][1] + height / 2;
+      }
+    };
+
+    var e = [];
+    for (i = 0; i < heartPointsCount; i++) {
+      var x = rand() * width;
+      var y = rand() * height;
+      e[i] = {
+        vx: 0,
+        vy: 0,
+        R: 2,
+        speed: rand() + 5,
+        q: ~~(rand() * heartPointsCount),
+        D: 2 * (i % 2) - 1,
+        force: 0.2 * rand() + 0.7,
+        f: "hsla(0," + ~~(40 * rand() + 60) + "%," + ~~(60 * rand() + 20) + "%,.3)",
+        trace: []
+      };
+      for (var k = 0; k < traceCount; k++) e[i].trace[k] = { x: x, y: y };
+    }
+
+    var config = {
+      traceK: 0.4,
+      timeDelta: 0.01
+    };
+
+    var time = 0;
+    var loop = function () {
+      var n = -Math.cos(time);
+      pulse((1 + n) * .5, (1 + n) * .5);
+      time += ((Math.sin(time)) < 0 ? 9 : (n > 0.8) ? .2 : 1) * config.timeDelta;
+      ctx.fillStyle = "rgba(0,0,0,.1)";
+      ctx.fillRect(0, 0, width, height);
+      for (i = e.length; i--;) {
+        var u = e[i];
+        var q = targetPoints[u.q];
+        var dx = u.trace[0].x - q[0];
+        var dy = u.trace[0].y - q[1];
+        var length = Math.sqrt(dx * dx + dy * dy);
+        if (10 > length) {
+          if (0.95 < rand()) {
+            u.q = ~~(rand() * heartPointsCount);
+          }
+          else {
+            if (0.99 < rand()) {
+              u.D *= -1;
+            }
+            u.q += u.D;
+            u.q %= heartPointsCount;
+            if (0 > u.q) {
+              u.q += heartPointsCount;
+            }
+          }
+        }
+        u.vx += -dx / length * u.speed;
+        u.vy += -dy / length * u.speed;
+        u.trace[0].x += u.vx;
+        u.trace[0].y += u.vy;
+        u.vx *= u.force;
+        u.vy *= u.force;
+        for (k = 0; k < u.trace.length - 1;) {
+          var T = u.trace[k];
+          var N = u.trace[++k];
+          N.x -= config.traceK * (N.x - T.x);
+          N.y -= config.traceK * (N.y - T.y);
+        }
+        ctx.fillStyle = u.f;
+        for (k = 0; k < u.trace.length; k++) {
+          ctx.fillRect(u.trace[k].x, u.trace[k].y, 1, 1);
+        }
+      }
+      //ctx.fillStyle = "rgba(255,255,255,1)";
+      //for (i = u.trace.length; i--;) ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
+
+      window.requestAnimationFrame(loop, canvas);
+    };
+    loop();
+
+
+  }
+
+
+  // auto spin
+  if (autoRotate) {
+    var animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
+    ospin.style.animation = `${animationName} ${Math.abs(
+      rotateSpeed
+    )}s infinite linear`;
+  }
+
+
+
+
+
+  // setup events
+  document.onpointerdown = function (e) {
+    clearInterval(odrag.timer);
+    e = e || window.event;
+    var sX = e.clientX,
+      sY = e.clientY;
+
+
+    this.onpointermove = function (e) {
+      e = e || window.event;
+      var nX = e.clientX,
+        nY = e.clientY;
+      desX = nX - sX;
+      desY = nY - sY;
+      tX += desX * 0.1;
+      tY += desY * 0.1;
+      applyTranform(odrag);
+      sX = nX;
+      sY = nY;
+    };
+
+
+    this.onpointerup = function (e) {
+      odrag.timer = setInterval(function () {
+        desX *= 0.95;
+        desY *= 0.95;
+        tX += desX * 0.1;
+        tY += desY * 0.1;
+        applyTranform(odrag);
+        playSpin(false);
+        if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+          clearInterval(odrag.timer);
+          playSpin(true);
+        }
+      }, 17);
+      this.onpointermove = this.onpointerup = null;
+    };
+
+
+    return false;
+  };
+
+
+  document.onmousewheel = function (e) {
+    e = e || window.event;
+    var d = e.wheelDelta / 20 || -e.detail;
+    radius += d;
+    init(1);
+  };
+
+
+
+</script>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .frame {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  html,
+  body {
+    height: 100%;
+    /* for touch screen */
+    touch-action: none;
+  }
+
+  body {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #111;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  #drag-container,
+  #spin-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-10deg);
+    transform: rotateX(-10deg);
+  }
+
+  #drag-container img,
+  #drag-container video {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px #fff;
+    box-shadow: 0 0 8px #fff;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  }
+
+  #drag-container img:hover,
+  #drag-container video:hover {
+    -webkit-box-shadow: 0 0 15px #fffd;
+    box-shadow: 0 0 15px #fffd;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+    transform: translate(-50%, -50%) rotateX(90deg);
+    color: #fff;
+  }
+
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+    transform: translate(-50%, -50%) rotateX(90deg);
+    background: -webkit-radial-gradient(center center, farthest-side, #9993, transparent);
+  }
+
+  #music-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+
+    to {
+      -webkit-transform: rotateY(360deg);
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+
+    to {
+      -webkit-transform: rotateY(360deg);
+      transform: rotateY(360deg);
+    }
+  }
+
+  @-webkit-keyframes spinRevert {
+    from {
+      -webkit-transform: rotateY(360deg);
+      transform: rotateY(360deg);
+    }
+
+    to {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+  }
+
+  @keyframes spinRevert {
+    from {
+      -webkit-transform: rotateY(360deg);
+      transform: rotateY(360deg);
+    }
+
+    to {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+  }
+
+  html,
+  body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: #000;
+  }
+
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  canvas {
+    /* top: 50%; left: 50%; */
+    z-index: 0;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: heart 1.5s ease infinite;
+  }
+
+  @keyframes heart {
+    0% {
+      transform: scale(1);
+    }
+
+    30% {
+      transform: scale(0.8);
+    }
+
+    /* 60% { transform: scale(1.2); } */
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+  #drag-container {
+    z-index: 2;
+    position: relative;
+  }
+
+#drag-container {
+    position: relative;
+      width: 100%;
+    height: 900px;
+    color: red;
+  }
+
+#text-container {
+  width: 0%;
+}
+
+#birthday {
+  position: absolute;
+  top: 14%;                /* Distance from top */
+  left: 50%;                /* Center horizontally */
+  transform: translateX(-50%);
+  color: #c97a7a;               /* Text color */
+  font-size: 70px;          /* Bigger text */
+  text-shadow: 0 0 100px #ff0000; /* Glow effect */
+  z-index: 10;              /* On top of everything */
+  font-family: 'Italianno';
+  text-align: center;
+}
+
+
+#text-container-bottom {
+  position: absolute;
+  bottom: 5%;                /* Distance from top */
+  left: 50%;                /* Center horizontally */
+  transform: translateX(-50%);
+  color: #c97a7a;               /* Text color */
+  font-size: 44px;          /* Bigger text */
+  text-shadow: 0 0 100px #ff0000; /* Glow effect */
+  z-index: 10;              /* On top of everything */
+  font-family: 'Italianno';
+  text-align: center;
+}
+
+
+
+
+</style>
+
+</html>
